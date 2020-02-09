@@ -2,16 +2,18 @@
     <head>
         <title>Django Developer - NASA Case</title>
     </head>
+    
     <body>
         <div>
             <h1><a href="/">Django Developer - NASA Case</a></h1>
         </div>
 
-        <div>
-            <h2>title </h2>
-            <p>date: 14.06.2014, 12:14</p>
-            <h2><a href="">Picture of the Day will be there soon</a></h2>
-            <p>explanation</p>
-        </div>
+        {% for imge in imges %}
+            <div>
+                <p>published: {{ imge.date }}</p>
+                <h2><a href="">{{ imge.title }}</a></h2>
+                <p>{{ imge.expln|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
